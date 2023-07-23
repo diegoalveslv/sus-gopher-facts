@@ -2,7 +2,7 @@ FROM alpine:latest
 
 WORKDIR /app
 
-COPY build/sus-gopher-facts /app/
+COPY build/sus-gopher-facts /app
 
 EXPOSE 8080
 

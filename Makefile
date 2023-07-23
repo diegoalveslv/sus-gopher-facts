@@ -17,7 +17,7 @@ help:
 
 # Build the Go binary
 go-build:
-	go build -o build/$(APP_NAME)
+	CGO_ENABLED=0 go build -o build/$(APP_NAME)
 
 # Clean up the Go binary
 go-clean:
@@ -25,7 +25,7 @@ go-clean:
 	rm -f $(APP_NAME)
 
 # Build the Docker image
-docker-build: build
+docker-build: go-build
 	docker build -t $(APP_NAME):$(IMAGE_TAG) .
 
 # Run the Docker container

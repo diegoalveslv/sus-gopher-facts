@@ -9,7 +9,7 @@ import (
 )
 
 type CatFactResponse struct {
-	Data []string 
+	Data []string
 }
 
 func main() {
@@ -19,10 +19,10 @@ func main() {
 
 		if r.Method == http.MethodGet {
 			catFact := getCatFact()
-			catFact = strings.Replace(catFact, "cat", "gopher", -1)
-			catFact = strings.Replace(catFact, "cats", "gophers", -1)
-			catFact = strings.Replace(catFact, "Cat", "Gopher", -1)
-			catFact = strings.Replace(catFact, "Cats", "Gophers", -1)
+			catFact = strings.Replace(catFact, " cat ", " gopher ", -1)
+			catFact = strings.Replace(catFact, " cats ", " gophers ", -1)
+			catFact = strings.Replace(catFact, " Cat ", " Gopher ", -1)
+			catFact = strings.Replace(catFact, " Cats ", " Gophers ", -1)
 
 			fmt.Fprint(w, catFact)
 		} else {

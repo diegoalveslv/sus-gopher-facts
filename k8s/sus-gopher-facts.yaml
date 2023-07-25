@@ -39,7 +39,7 @@ metadata:
     name: sus-gopher-facts
 spec:
   rules:
-  - host: "facts.127.0.0.1.nip.io"
+  - host: "facts.172.18.253.215.nip.io"
     http:
       paths:
       - pathType: Prefix

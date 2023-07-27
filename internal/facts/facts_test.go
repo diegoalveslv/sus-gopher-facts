@@ -17,13 +17,9 @@ func TestGetGopherFacts(t *testing.T) {
 
 	t.Run("should replace all the word cats maintaining casing", func(t *testing.T) {
 
-		input := `Ends with a cat.
-		Cat starts a paragraph. Cat starts the phrase. Ends with cats.
-		Cats starts a paragraph. Catnip shouldn't change.`
+		input := `Cat cat cat. cat's Cats cats cats. Catnip tomcat`
 
-		want := `Ends with a gopher.
-		Gopher starts a paragraph. Gopher starts the phrase. Ends with gophers.
-		Gophers starts a paragraph. Catnip shouldn't change.`
+		want := `Gopher gopher gopher. gopher's Gophers gophers gophers. Catnip tomcat`
 
 		got := facts.GetGopherFacts(FakeFactsGetter{input})
 
